@@ -1,0 +1,101 @@
+name: ユニットテスト
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: test_laravel
+          MYSQL_USER: admin
+          MYSQL_PASSWORD: password
+        ports:
+          - 3306:3306
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v3
+
+      - name: セットアップ PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1.19' # 使用するPHPバージョンを指定してください
+          extensions: intl,pdo_mysql,zip,bcmath
+          ini-values: |
+            memory_limit=512M
+
+      - name: セットアップ Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18' # 使用するNode.jsバージョンを指定してください
+
+      - name: Set up Composer
+        run: |
+          curl -sS https://getcomposer.org/installer -o composer-setup.php
+          php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+          rm composer-setup.php
+    
+      - name: Install dependencies
+        working-directory: ./src
+        run: |
+          composer install --prefer-dist --no-progress
+
+      - name: Install Node.js dependencies
+        working-directory: ./src
+        run: |
+          npm install
+
+      - name: Build assets
+        working-directory: ./src
+        run: |
+          npm run build
+
+      - name: Set up environment variables
+        working-directory: ./src
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Migrate and Test
+        working-directory: ./src
+        run: |
+          php artisan migrate
+          php artisan test
+        env:
+          DB_HOST: 127.0.0.1
+          DB_DATABASE: test_laravel
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+
+      - name: Build and push Docker image
+        run: |
+          docker build -t task-devide-app ./infra/php
+          docker login -u AWS -p $(aws ecr get-login-password --region ap-northeast-1) 473845837769.dkr.ecr.ap-northeast-1.amazonaws.com/test_repo
+          docker tag task-devide-app 473845837769.dkr.ecr.ap-northeast-1.amazonaws.com/test_repo:latest
+          docker push 473845837769.dkr.ecr.ap-northeast-1.amazonaws.com/test_repo:latest
+
+      # - name: Deploy to ECS
+      #   run: |
+      #     aws ecs register-task-definition --cli-input-json file://taskdef.json
+      #     aws ecs update-service --cluster <your-ecs-cluster> --service <your-ecs-service> --force-new-deployment
