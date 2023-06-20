@@ -3,11 +3,9 @@ FROM php:8.1-fpm-bullseye
 EXPOSE 5173
 
 ENV TZ=Asia/Tokyo \
-  # locale
   LANG=ja_JP.UTF-8 \
   LANGUAGE=ja_JP:ja \
   LC_ALL=ja_JP.UTF-8 \
-  # composer environment
   COMPOSER_ALLOW_SUPERUSER=1 \
   COMPOSER_HOME=/composer
 
@@ -53,4 +51,4 @@ RUN composer install -q -n --no-ansi --no-scripts --no-progress --prefer-dist \
 
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
 RUN apt-get install -y nodejs
-RUN npm run build
+# RUN npm run build
