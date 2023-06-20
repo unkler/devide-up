@@ -51,4 +51,4 @@ RUN composer install -q -n --no-ansi --no-scripts --no-progress --prefer-dist \
 
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
 RUN apt-get install -y nodejs
-# RUN npm run build
+RUN npm run build
