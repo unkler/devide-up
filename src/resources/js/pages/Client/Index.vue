@@ -19,7 +19,7 @@
     </div>
     <FlashMessage v-show="registeredResult" />
     <div v-if="isLoading">
-      <img src="/public/storage/images/loading.gif" class="mx-auto mt-20" />
+      <img :src="'/storage/images/loading.gif'" class="mx-auto mt-20" />
     </div>
     <div v-else>
       <div v-if="clients.length === 0">

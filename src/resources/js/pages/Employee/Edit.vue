@@ -4,7 +4,7 @@
       <h2 class="font-medium text-gray-800 mr-5 dark:text-gray-400">社員編集</h2>
     </div>
     <div v-if="isLoading.employee || isLoading.contractTypes || isLoading.prefectures">
-      <img src="/public/storage/images/loading.gif" class="mx-auto mt-20" />
+      <img :src="'/storage/images/loading.gif'" class="mx-auto mt-20" />
     </div>
     <div v-else>
       <div class="mx-4 my-5">

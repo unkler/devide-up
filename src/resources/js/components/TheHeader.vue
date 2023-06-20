@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex items-center justify-between h-14 text-white z-1">
     <div class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-blue-800 dark:bg-gray-800 border-none">
-      <img class="w-6 h-6 md:w-10 md:h-10 mr-2 rounded-md overflow-hidden" src="/public/storage/images/logo.jpg" />
+      <img class="w-6 h-6 md:w-10 md:h-10 mr-2 rounded-md overflow-hidden" :src="'/storage/images/logo.jpg'" />
       <span class="hidden md:block">Devide Up</span>
     </div>
     <div class="flex justify-between items-center h-14 bg-blue-800 dark:bg-gray-800 header-right">

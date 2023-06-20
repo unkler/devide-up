@@ -19,7 +19,7 @@
     </div>
     <FlashMessage v-show="registeredResult" />
     <div v-if="isLoading">
-      <img src="/public/storage/images/loading.gif" class="mx-auto mt-20" />
+      <img :src="'/storage/images/loading.gif'" class="mx-auto mt-20" />
     </div>
     <div v-else>
       <div v-if="workplaces.length === 0">
@@ -35,7 +35,7 @@
                     </div>
                   </template>
                   <template v-else>
-                    <img class="rounded-t-lg" src="/public/storage/images/no_image.jpg" />
+                    <img class="rounded-t-lg" :src="'/storage/images/no_image.jpg'" />
                   </template>
                   <div @click.stop="openDropDown(workplace.id)" v-click-outside="closeDropDown" class="absolute top-[234px] right-1 w-10 h-10 leading-10 text-center hover:bg-gray-200 rounded-full text-lg cursor-pointer">
                     <i class="fa-solid fa-ellipsis-vertical"></i>

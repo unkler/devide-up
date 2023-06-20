@@ -4,7 +4,7 @@
       <h2 class="font-medium text-gray-800 mr-5 dark:text-gray-400">作業登録</h2>
     </div>
     <div v-if="isLoading.clientsWithWorkplaces || isLoading.employees">
-      <img src="/public/storage/images/loading.gif" class="mx-auto mt-20" />
+      <img :src="'/storage/images/loading.gif'" class="mx-auto mt-20" />
     </div>
     <div v-else>
       <div class="mx-4 mt-5">
