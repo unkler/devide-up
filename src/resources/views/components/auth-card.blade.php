@@ -2,7 +2,7 @@
     <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
       <div class="flex justify-center items-center mb-5">
         <div class="text-center">
-          <img src="{{ asset('/storage/images/logo.jpg') }}" width="50" class="m-auto">
+          <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/logo.jpg" width="50" class="m-auto">
           <p class="text-gray-500 inline-block align-middle">Devide Up</p>
         </div>
       </div>
