@@ -11,7 +11,7 @@
     </div>
     <FlashMessage v-show="registeredResult" />
     <div v-if="isLoading">
-      <img :src="'/storage/images/loading.gif'" class="mx-auto mt-20" />
+      <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/storage/images/loading.gif" class="mx-auto mt-20" />
     </div>
     <div v-else>
       <div v-if="taskAssigns.length === 0">
