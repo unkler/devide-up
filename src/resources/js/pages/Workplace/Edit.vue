@@ -4,7 +4,7 @@
       <h2 class="font-medium text-gray-800 mr-5 dark:text-gray-400">作業場所編集</h2>
     </div>
     <div v-if="isLoading.workplace || isLoading.clients || isLoading.prefectures">
-      <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/storage/images/loading.gif" class="mx-auto mt-20" />
+      <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/loading.gif" class="mx-auto mt-20" />
     </div>
     <div v-else>
       <div class="mx-4 mt-5">
