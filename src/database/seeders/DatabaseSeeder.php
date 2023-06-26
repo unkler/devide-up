@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Employee::factory(100)->create();
-        Client::factory(30)->create();
-        Workplace::factory(50)->create();
+        // Client::factory(30)->create();
+        // Workplace::factory(50)->create();
     }
 }

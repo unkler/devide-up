@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade');
             $table->string('name');
             $table->string('post_code', 7);
             $table->foreignId('prefecture_id')->constrained()->onUpdate('cascade');

@@ -4,6 +4,7 @@ namespace App\Client\UseCase;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Models\Client;
 use App\Traits\ModifyLengthAwarePaginator;
+use Illuminate\Support\Facades\Auth;
 
 final class ShowClientUseCase {
 
@@ -18,6 +19,7 @@ final class ShowClientUseCase {
     public function handle(?string $search_keyword): LengthAwarePaginator
     {
         $clients = Client::select('id', 'name', 'post_code', 'prefecture_id', 'address', 'phone_number', 'email')
+            ->where('user_id', Auth::id())
             ->SearchClientBytName($search_keyword)
             ->orderBy('created_at', 'DESC')
             ->orderBy('id')
