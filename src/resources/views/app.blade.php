@@ -12,20 +12,6 @@
   <link rel="icon" type="image/png" href="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/favion/android-chrome-192x192.png">
 
   @vite(['resources/css/app.css', 'resources/js/app.js'])
-  <style>
-    /* Custom style */
-    .header-right {
-        width: calc(100% - 3.5rem);
-    }
-    .sidebar:hover {
-        width: 16rem;
-    }
-    @media only screen and (min-width: 768px) {
-        .header-right {
-            width: calc(100% - 16rem);
-        }        
-    }
-  </style>
 </head>
 <body>
   <div id="app"></div>
