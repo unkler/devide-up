@@ -7,6 +7,7 @@ use Illuminate\Http\UploadedFile;
 use App\Models\Workplace;
 use App\Models\WorkplaceImage;
 use App\Workplace\Entity\WorkplaceData;
+use Storage;
 
 final class UpdateWorkplaceUseCase {
 
@@ -51,9 +52,9 @@ final class UpdateWorkplaceUseCase {
 
              //画像保存処理
              if (isset($workplace_image)) {
-                $file_path =   $workplace_image->store('public/workplaces');
+                $file_path = Storage::disk('s3')->putFile('workplaces', $workplace_image);
                 WorkplaceImage::create([
-                    'path' =>   str_replace('public', '/storage', $file_path),
+                    'path' =>   $file_path,
                     'workplace_id' => $workplace->id,
                     'is_active' => true,
                 ]);

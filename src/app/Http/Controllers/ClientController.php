@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Prefecture;
 use App\Http\Requests\ClientRequest;
 use App\Models\Client;
@@ -63,7 +64,7 @@ class ClientController extends Controller
      */
     public function store(ClientRequest $request, StoreClientUseCase $use_case): int
     {
-        $client_data = new ClientData(null, $request->name, $request->post_code, 
+        $client_data = new ClientData(null, AUth::id(), $request->name, $request->post_code, 
             $request->prefecture_id, $request->address, $request->phone_number, $request->email);
 
         return $use_case->handle($client_data);
@@ -78,7 +79,7 @@ class ClientController extends Controller
      */
     public function update(ClientRequest $request, UpdateClientUseCase $use_case): int
     {
-        $client_data = new ClientData($request->id, $request->name, $request->post_code, 
+        $client_data = new ClientData($request->id, Auth::id(), $request->name, $request->post_code, 
             $request->prefecture_id, $request->address, $request->phone_number, $request->email);
 
         return $use_case->handle($client_data);

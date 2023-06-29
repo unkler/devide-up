@@ -24,6 +24,16 @@ class Client extends Model
     ];
 
     /**
+     * ユーザーテーブルとのリレーション
+     *
+     * @return BelongsTo
+     */
+    public function users(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
      * 都道府県テーブルとのリレーション
      *
      * @return BelongsTo

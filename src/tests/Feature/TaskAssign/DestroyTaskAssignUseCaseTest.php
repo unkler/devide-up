@@ -5,6 +5,10 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
+use App\Models\Employee;
+use App\Models\Client;
+use App\Models\Workplace;
 use App\Models\TaskAssign;
 use App\Models\EmployeeTaskAssign;
 use App\TaskAssign\UseCase\DestroyTaskAssignUseCase;
@@ -16,7 +20,7 @@ class DestroyTaskAssignUseCaseTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        
+      
         Artisan::call('migrate:fresh --seed');
     }
 
@@ -27,6 +31,13 @@ class DestroyTaskAssignUseCaseTest extends TestCase
      */
     public function test_作業を削除する(): void
     {
+        $user = User::factory()->create();
+        Client::factory(30)->create();
+        Workplace::factory(30)->create();
+        Employee::factory()->create();
+
+        $this->actingAs($user);
+
         $task_assign = TaskAssign::create([
             'workplace_id' => 1,
             'implementation_date' => '2030-01-01'

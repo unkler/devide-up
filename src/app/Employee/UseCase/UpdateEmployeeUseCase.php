@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Employee;
 use App\Models\EmployeeImage;
 use App\Employee\Entity\EmployeeData;
+use Storage;
 
 final class UpdateEmployeeUseCase {
 
@@ -56,10 +57,10 @@ final class UpdateEmployeeUseCase {
 
             //画像保存処理
             if (isset($profile_image)) {
-                $file_path =   $profile_image->store('public/employees');
+                $file_path = Storage::disk('s3')->putFile('employees', $profile_image);
 
                 EmployeeImage::create([
-                    'path' =>   str_replace('public', '/storage', $file_path),
+                    'path' => $file_path,
                     'employee_id' => $employee->id,
                     'is_active' => true,
                 ]);

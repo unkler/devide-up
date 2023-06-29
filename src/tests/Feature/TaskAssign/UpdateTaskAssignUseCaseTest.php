@@ -5,6 +5,10 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
+use App\Models\Client;
+use App\Models\Workplace;
+use App\Models\Employee;
 use App\Models\TaskAssign;
 use App\TaskAssign\UseCase\UpdateTaskAssignUseCase;
 use App\TaskAssign\Entity\TaskAssignData;
@@ -27,6 +31,16 @@ class UpdateTaskAssignUseCaseTest extends TestCase
      */
     public function test_作業を更新する(): void
     {
+        $user = User::factory()->create();
+
+        Client::factory(30)->create();
+
+        Workplace::factory(30)->create();
+
+        Employee::factory(3)->create();
+
+        $this->actingAs($user);
+
         $task_assign = TaskAssign::create([
             'workplace_id' => 1,
             'implementation_date' => '2030-01-01'

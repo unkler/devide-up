@@ -17,7 +17,7 @@ class TaskAssignFactory extends Factory
     public function definition()
     {
         return [
-            'workplace_id' => fake()->numberBetween(1, 50),
+            'workplace_id' => fake()->numberBetween(1, 30),
             'implementation_date' => fake()->date($format='Y-m-d',$min='now'),
         ];
     }

@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
 use App\Models\Employee;
 use App\Employee\UseCase\DestroyEmployeeUseCase;
 
@@ -26,7 +27,12 @@ class DestroyEmployeeUseCaseTest extends TestCase
      */
     public function test_従業員を削除する(): void
     {
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+
         $employee = Employee::create([
+            'user_id'=> $user->id,
             'contract_type_id' => 1,
             'last_name' => '山田',
             'first_name' => '太郎',

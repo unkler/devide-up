@@ -20,13 +20,13 @@ final class StoreEmployeeUseCase {
      */
     public function handle(EmployeeData $employee_data, ?UploadedFile $profile_image): int
     {
-
         $response_code = Response::HTTP_CREATED;
 
         DB::beginTransaction();
 
         try {
             $employee = Employee::create([
+                'user_id' => $employee_data->getUserId(),
                 'contract_type_id' => $employee_data->getContractTypeId(),
                 'last_name' => $employee_data->getLastName(),
                 'first_name' => $employee_data->getFirstName(),
@@ -42,12 +42,9 @@ final class StoreEmployeeUseCase {
 
             //画像保存処理
             if (isset($profile_image)) {
-                // ローカル(storage)に画像保存
-                // $file_path =   $profile_image->store('public/employees');
-
                 $file_path = Storage::disk('s3')->putFile('employees', $profile_image);
                 EmployeeImage::create([
-                    'path' =>   str_replace('public', '/storage', $file_path),
+                    'path' => $file_path,
                     'employee_id' => $employee->id,
                     'is_active' => true,
                 ]);

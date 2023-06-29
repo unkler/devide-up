@@ -5,6 +5,7 @@ final class ClientData
 {
     public function __construct(
         private ?int $id,
+        private int $user_id,
         private string $name,
         private int $post_code,
         private int $prefecture_id,
@@ -13,6 +14,7 @@ final class ClientData
         private string $email,
     ) {
         $this->id = $id;
+        $this->user_id = $user_id;
         $this->name = $name;
         $this->post_code = $post_code;
         $this->prefecture_id = $prefecture_id;
@@ -24,6 +26,11 @@ final class ClientData
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getUserId()
+    {
+        return $this->user_id;
     }
 
     public function getName()

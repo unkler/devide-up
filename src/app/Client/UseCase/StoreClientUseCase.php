@@ -4,7 +4,6 @@ namespace App\Client\UseCase;
 use Illuminate\Http\Response;
 use App\Models\Client;
 use App\Client\Entity\ClientData;
-use Illuminate\Support\Facades\Auth;
 
 final class StoreClientUseCase {
 
@@ -20,7 +19,7 @@ final class StoreClientUseCase {
 
         try {
             Client::create([
-                'user_id' => Auth::id(),
+                'user_id' => $client_data->getUserId(),
                 'name' => $client_data->getName(),
                 'post_code' => $client_data->getPostCode(),
                 'prefecture_id' => $client_data->getPrefectureId(),

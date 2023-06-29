@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Workplace;
 use App\Models\Client;
 use App\Models\Prefecture;
@@ -56,7 +57,8 @@ class WorkplaceController extends Controller
      */
     public function fetchClients(): Collection
     {
-        $contract_types = Client::orderBy('created_at', 'DESC')
+        $contract_types = Client::where('user_id', Auth::id())
+            ->orderBy('created_at', 'DESC')
             ->orderBy('id')
             ->pluck('name', 'id');
     

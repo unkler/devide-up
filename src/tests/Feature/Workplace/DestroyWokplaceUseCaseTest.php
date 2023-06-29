@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
+use App\Models\Client;
 use App\Models\Workplace;
 use App\Workplace\UseCase\DestroyWorkplaceUseCase;
 
@@ -26,8 +28,14 @@ class DestroyWorkplaceUseCaseTest extends TestCase
      */
     public function test_作業場所を削除する(): void
     {
+        $user = User::factory()->create();
+
+        $client = Client::factory()->create();
+
+        $this->actingAs($user);
+        
         $workplace = Workplace::create([
-            'client_id' => 1,
+            'client_id' => $client->id,
             'name' => '永田町店',
             'post_code' => 1000014,
             'prefecture_id' => 13,

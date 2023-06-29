@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
+use App\Models\Client;
 use App\Models\Workplace;
 use App\Workplace\UseCase\ShowWorkplaceUseCase;
 
@@ -24,7 +26,13 @@ class ShowWorkplaceUseCaseTest extends TestCase
      */
     public function test_作業場所一覧を取得する(): void
     {
+        $user = User::factory()->create();
+
+        Client::factory(30)->create();
+
         Workplace::factory(30)->create();
+
+        $this->actingAs($user);
 
         $use_case = new ShowWorkplaceUseCase();
 

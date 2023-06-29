@@ -5,6 +5,10 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
+use App\Models\Client;
+use App\Models\Workplace;
+use App\Models\Employee;
 use App\TaskAssign\UseCase\StoreTaskAssignUseCase;
 use App\TaskAssign\Entity\TaskAssignData;
 
@@ -26,6 +30,16 @@ class StoreTaskAssignUseCaseTest extends TestCase
      */
     public function test_作業を新規登録する(): void
     {
+        $user = User::factory()->create();
+
+        Client::factory(30)->create();
+
+        Workplace::factory(30)->create();
+
+        Employee::factory(2)->create();
+
+        $this->actingAs($user);
+        
         $task_assign_data = new TaskAssignData(null, 1, [1,2], '2030-01-01');
 
         $use_case = new StoreTaskAssignUseCase();
@@ -44,6 +58,5 @@ class StoreTaskAssignUseCaseTest extends TestCase
         $this->assertDatabaseHas('employee_task_assign', [
             'employee_id' => $task_assign_data->getEmployeeIds()[1],
         ]);
-
     }
 }

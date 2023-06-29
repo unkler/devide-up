@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
 use App\Employee\UseCase\StoreEmployeeUseCase;
 use App\Employee\Entity\EmployeeData;
 
@@ -26,7 +27,11 @@ class StoreEmployeeUseCaseTest extends TestCase
      */
     public function test_従業員を新規登録する(): void
     {
-        $employee_data = new EmployeeData(null, 1, '山田', '太郎', 'ヤマダ', 'タロウ', 1000014, 
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+
+        $employee_data = new EmployeeData(null, $user->id, 1, '山田', '太郎', 'ヤマダ', 'タロウ', 1000014, 
             13, '千代田区永田町1-7-1', '03-3581-5111', 'test@test.com', '1975-01-01');
 
         $use_case = new StoreEmployeeUseCase();
@@ -34,6 +39,7 @@ class StoreEmployeeUseCaseTest extends TestCase
         $use_case->handle($employee_data, null);
 
         $this->assertDatabaseHas('employees', [
+            'user_id' => $employee_data->getUserId(),
             'contract_type_id' => $employee_data->getContractTypeId(),
             'last_name' => $employee_data->getLastName(),
             'first_name' => $employee_data->getFirstName(),

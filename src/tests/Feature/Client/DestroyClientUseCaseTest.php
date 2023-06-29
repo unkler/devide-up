@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
 use App\Models\Client;
 use App\Client\UseCase\DestroyClientUseCase;
 
@@ -26,7 +27,12 @@ class DestroyClientUseCaseTest extends TestCase
      */
     public function test_取引先を削除する(): void
     {
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+
         $client = Client::create([
+            'user_id' => $user->id,
             'name' => '株式会社 テスト',
             'post_code' => 1000014,
             'prefecture_id' => 13,

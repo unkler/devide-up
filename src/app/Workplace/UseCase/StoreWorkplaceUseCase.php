@@ -35,13 +35,8 @@ final class StoreWorkplaceUseCase {
 
             //画像保存処理
             if (isset($workplace_image)) {
-                //ローカル(storage)に画像保存
-                // $file_path =   $workplace_image->store('public/workplaces');
-                
                 $file_path = Storage::disk('s3')->putFile('workplaces', $workplace_image);
                 WorkplaceImage::create([
-                     //ローカル(storage)に画像保存の場合は置換してDBに保存
-                    // 'path' =>   str_replace('public', '/storage', $file_path),
                     'path' => $file_path,
                     'workplace_id' => $workplace->id,
                     'is_active' => true,

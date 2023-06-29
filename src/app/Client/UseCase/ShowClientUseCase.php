@@ -1,10 +1,10 @@
 <?php
 namespace App\Client\UseCase;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Models\Client;
 use App\Traits\ModifyLengthAwarePaginator;
-use Illuminate\Support\Facades\Auth;
 
 final class ShowClientUseCase {
 

@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
 use App\Models\Employee;
 use App\Employee\UseCase\ShowEmployeeUseCase;
 
@@ -24,7 +25,11 @@ class ShowEmployeeUseCaseTest extends TestCase
      */
     public function test_従業員一覧を取得する(): void
     {
+        $user = User::factory()->create();
+
         Employee::factory(30)->create();
+
+        $this->actingAs($user);
 
         $use_case = new ShowEmployeeUseCase();
 

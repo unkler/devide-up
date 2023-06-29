@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
 use App\Models\Client;
 use App\Client\UseCase\ShowClientUseCase;
 
@@ -24,7 +25,11 @@ class ShowClientUseCaseTest extends TestCase
      */
     public function test_取引先一覧を取得する(): void
     {
+        $user = User::factory()->create();
+
         Client::factory(30)->create();
+
+        $this->actingAs($user);
 
         $use_case = new ShowClientUseCase();
 

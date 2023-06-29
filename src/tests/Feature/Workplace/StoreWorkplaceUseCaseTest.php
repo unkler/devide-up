@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
+use App\Models\Client;
 use App\Workplace\UseCase\StoreWorkplaceUseCase;
 use App\Workplace\Entity\WorkplaceData;
 
@@ -26,7 +28,13 @@ class StoreWorkplaceUseCaseTest extends TestCase
      */
     public function test_作業場所を新規登録する(): void
     {
-        $workplace_data = new WorkplaceData(null, 1, '永田町店', 100014, 
+        $user = User::factory()->create();
+
+        $client = Client::factory()->create();
+
+        $this->actingAs($user);
+
+        $workplace_data = new WorkplaceData(null, $client->id, '永田町店', 100014, 
             13, '千代田区永田町1-7-1', '03-3581-3100');
 
         $use_case = new StoreWorkplaceUseCase();

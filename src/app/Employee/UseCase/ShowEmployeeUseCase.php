@@ -1,6 +1,7 @@
 <?php
 namespace App\Employee\UseCase;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Models\Employee;
 use App\Traits\ModifyLengthAwarePaginator;
@@ -19,6 +20,7 @@ final class ShowEmployeeUseCase {
         $employees = Employee::select('id', 'contract_type_id', 'last_name', 'first_name', 'last_name_kana',
                 'first_name_kana','post_code', 'prefecture_id', 'address', 'phone_number', 'email', 'birthday')
             ->SearchEmployeeByLastName($search_keyword)
+            ->where('user_id', Auth::id())
             ->where('contract_type_id', '<=', \ContractTypeConstant::PART_TIME_JOB)
             ->orderBy('created_at', 'DESC')
             ->orderBy('id')

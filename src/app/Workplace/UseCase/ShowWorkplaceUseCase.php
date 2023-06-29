@@ -1,6 +1,7 @@
 <?php
 namespace App\Workplace\UseCase;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Models\Workplace;
 use App\Traits\ModifyLengthAwarePaginator;
@@ -17,7 +18,12 @@ final class ShowWorkplaceUseCase {
      */
     public function handle(?string $search_keyword): LengthAwarePaginator
     {
-        $workplaces = Workplace::select('id', 'client_id', 'name', 'post_code',
+        $user = Auth::user();
+
+        $workplaces = Workplace::whereHas('clients', function ($query) use ($user) {
+                $query->where('user_id', $user->id);
+            })
+            ->select('id', 'client_id', 'name', 'post_code',
                 'prefecture_id', 'address', 'phone_number')
             ->SearchWorkplaceByName($search_keyword)
             ->orderBy('created_at', 'DESC')

@@ -5,6 +5,7 @@ final class EmployeeData
 {
     public function __construct(
         private ?int $id,
+        private int $user_id,
         private int $contract_type_id,
         private string $last_name,
         private string $first_name,
@@ -18,6 +19,7 @@ final class EmployeeData
         private string $birthday
     ) {
         $this->id = $id;
+        $this->user_id = $user_id;
         $this->contract_type_id = $contract_type_id;
         $this->last_name = $last_name;
         $this->first_name = $first_name;
@@ -34,6 +36,11 @@ final class EmployeeData
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getUserId()
+    {
+        return $this->user_id;
     }
 
     public function getContractTypeId()

@@ -18,6 +18,7 @@ class EmployeeFactory extends Factory
     {
 
         return [
+            'user_id' => 1,
             'contract_type_id' => fake()->numberBetween(1, 5),
             'last_name' => fake()->lastName(),
             'first_name' => fake()->firstName(),

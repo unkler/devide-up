@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             PrefecturesSeeder::class,
         ]);
 
-        Employee::factory(100)->create();
+        // Employee::factory(100)->create();
         // Client::factory(30)->create();
         // Workplace::factory(50)->create();
     }

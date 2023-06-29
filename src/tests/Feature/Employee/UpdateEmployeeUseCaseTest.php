@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
 use App\Models\Employee;
 use App\Employee\UseCase\UpdateEmployeeUseCase;
 use App\Employee\Entity\EmployeeData;
@@ -27,7 +28,12 @@ class UpdateEmployeeUseCaseTest extends TestCase
      */
     public function test_従業員を更新する(): void
     {
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+
         $employee = Employee::create([
+            'user_id' => $user->id,
             'contract_type_id' => 1,
             'last_name' => '山田',
             'first_name' => '太郎',
@@ -41,7 +47,7 @@ class UpdateEmployeeUseCaseTest extends TestCase
             'birthday' => '1975-01-01'
         ]);
 
-        $employee_data = new EmployeeData($employee->id, 2, '佐藤', '一郎', 'サトウ', 'イチロウ', 5408570, 
+        $employee_data = new EmployeeData($employee->id, $employee->user_id, 2, '佐藤', '一郎', 'サトウ', 'イチロウ', 5408570, 
             27, '大阪市中央区大手前２丁目 大阪府庁本館１階', '06-6944-8371', 'sample@sample.com', '2000-12-31');
 
         $use_case = new UpdateEmployeeUseCase();
@@ -49,7 +55,8 @@ class UpdateEmployeeUseCaseTest extends TestCase
         $use_case->handle($employee_data, null, false);
 
         $this->assertDatabaseHas('employees', [
-            'id' => $employee->id,
+            'id' => $employee_data->getId(),
+            'user_id' => $employee_data->getUserId(),
             'contract_type_id' => $employee_data->getContractTypeId(),
             'last_name' => $employee_data->getLastName(),
             'first_name' => $employee_data->getFirstName(),

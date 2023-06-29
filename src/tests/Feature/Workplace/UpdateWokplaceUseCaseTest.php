@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
+use App\Models\User;
+use App\Models\Client;
 use App\Models\Workplace;
 use App\Workplace\UseCase\UpdateWorkplaceUseCase;
 use App\Workplace\Entity\WorkplaceData;
@@ -27,8 +29,14 @@ class UpdateWorkplaceUseCaseTest extends TestCase
      */
     public function test_作業場所を更新する(): void
     {
+        $user = User::factory()->create();
+
+        $client = Client::factory(2)->create();
+
+        $this->actingAs($user);
+
         $workplace = Workplace::create([
-            'client_id' => 1,
+            'client_id' => $client[0]->id,
             'name' => '永田町店',
             'post_code' => 1000014,
             'prefecture_id' => 13,
@@ -36,7 +44,7 @@ class UpdateWorkplaceUseCaseTest extends TestCase
             'phone_number' => '03-3581-5111',
         ]);
 
-        $workplace_data = new WorkplaceData($workplace->id, 2, '大手前店', 5408570, 
+        $workplace_data = new WorkplaceData($workplace->id, $client[1]->id, '大手前店', 5408570, 
         27, '大阪市中央区大手前２丁目 大阪府庁本館１階', '06-6944-8371');
 
         $use_case = new UpdateWorkplaceUseCase();

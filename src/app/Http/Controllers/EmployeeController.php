@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Employee;
 use App\Models\ContractType;
 use App\Models\Prefecture;
@@ -86,7 +87,7 @@ class EmployeeController extends Controller
      */
     public function store(EmployeeRequest $request, StoreEmployeeUseCase $use_case): int
     {
-        $employee_data = new EmployeeData(null, $request->contract_type_id, $request->last_name,$request->first_name,
+        $employee_data = new EmployeeData(null, Auth::id(), $request->contract_type_id, $request->last_name,$request->first_name,
             $request->last_name_kana, $request->first_name_kana, $request->post_code, $request->prefecture_id,
             $request->address, $request->phone_number, $request->email, $request->birthday);
 
@@ -102,7 +103,7 @@ class EmployeeController extends Controller
      */
     public function update(EmployeeRequest $request, UpdateEmployeeUseCase $use_case): int
     {
-        $employee_data = new EmployeeData($request->id, $request->contract_type_id, $request->last_name,$request->first_name,
+        $employee_data = new EmployeeData($request->id, Auth::id(), $request->contract_type_id, $request->last_name,$request->first_name,
             $request->last_name_kana, $request->first_name_kana, $request->post_code, $request->prefecture_id,
             $request->address, $request->phone_number, $request->email, $request->birthday);
 

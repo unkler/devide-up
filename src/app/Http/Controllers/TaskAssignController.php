@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use App\Models\TaskAssign;
 use App\Models\Employee;
 use App\Models\Client;
@@ -37,7 +38,8 @@ class TaskAssignController extends Controller
      */
     public function fetchClientsWithWorkplaces(): Collection
     {
-        $clients = Client::has('workplaces')
+        $clients = Client::where('user_id', Auth::id())
+            ->has('workplaces')
             ->with(['workplaces'])
             ->get();
 
@@ -51,7 +53,8 @@ class TaskAssignController extends Controller
      */
     public function fetchEmployees(): Collection
     {
-        $employees = Employee::select('id', 'first_name', 'last_name')
+        $employees = Employee::where('user_id', Auth::id())
+            ->select('id', 'first_name', 'last_name')
             ->orderBy('created_at')
             ->get();
     
