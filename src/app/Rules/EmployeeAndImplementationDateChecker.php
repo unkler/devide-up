@@ -7,7 +7,6 @@ use App\Models\TaskAssign;
 
 class EmployeeAndImplementationDateChecker implements Rule
 {
-
     /**
      * Create a new rule instance.
      *
@@ -16,6 +15,7 @@ class EmployeeAndImplementationDateChecker implements Rule
      * @return void
      */
     public function __construct(
+        private ?int $task_assign_id,
         private array $employee_ids,
         private string $implementation_date)
     {
@@ -34,11 +34,16 @@ class EmployeeAndImplementationDateChecker implements Rule
     {
         $not_duplicate = true;
         foreach($this->employee_ids as $employee_id) {
-            $is_exist =TaskAssign::where('implementation_date', $this->implementation_date)
+            $query =TaskAssign::where('implementation_date', $this->implementation_date)
                 ->whereHas('employeeTaskAssigns', function ($query) use ($employee_id) {
                     $query->where('employee_id', $employee_id);
-                })
-                ->exists();
+                });
+
+            if (!is_null($this->task_assign_id)) {
+                $query->whereNotIn('id', [$this->task_assign_id]);
+            }
+
+            $is_exist = $query->exists();
 
             if ($is_exist) $not_duplicate = false;
         }

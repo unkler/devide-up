@@ -119,6 +119,12 @@ export default {
         })
         .then(res => {
           this.taskAssign = res.data
+          //担当者に変更が無かった時用にemployee_idsの初期値をセット
+          this.taskAssign.employees.forEach(employee => {
+            if (!this.taskAssign.employee_ids) this.taskAssign.employee_ids = []
+
+            this.taskAssign.employee_ids.push(employee.id)
+          });
         })
         .catch(error => {
           this.$toasted.error(errorMessage.systemError)

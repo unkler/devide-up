@@ -13,6 +13,7 @@ class WorkplaceAndImplementationDateChecker implements Rule
      * @return void
      */
     public function __construct(
+        private ?int $task_assign_id,
         private int $workplace_id,
         private string $implementation_date)
     {
@@ -29,9 +30,14 @@ class WorkplaceAndImplementationDateChecker implements Rule
      */
     public function passes($attribute, $value)
     {
-        $is_exist = TaskAssign::where('workplace_id', $this->workplace_id)
-            ->where('implementation_date', $this->implementation_date)
-            ->exists();
+        $query = TaskAssign::where('workplace_id', $this->workplace_id)
+            ->where('implementation_date', $this->implementation_date);
+
+        if (!is_null($this->task_assign_id)) {
+            $query->whereNotIn('id', [$this->task_assign_id]);
+        }
+
+        $is_exist = $query->exists();
 
         return !$is_exist;
     }

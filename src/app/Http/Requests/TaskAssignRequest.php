@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\TaskAssign;
 use App\Rules\WorkplaceAndImplementationDateChecker;
 use App\Rules\EmployeeAndImplementationDateChecker;
 
@@ -31,8 +30,8 @@ class TaskAssignRequest extends FormRequest
             'employee_ids' => ['array'],
             'employee_ids.*' => ['required', 'integer', 'exists:employees,id'],
             'implementation_date' => ['required', 'string', 'date_format:Y-m-d', 'after_or_equal:today',
-                new WorkplaceAndImplementationDateChecker($this->workplace_id, $this->implementation_date),
-                new EmployeeAndImplementationDateChecker($this->employee_ids, $this->implementation_date)
+                new WorkplaceAndImplementationDateChecker($this->id, $this->workplace_id, $this->implementation_date),
+                new EmployeeAndImplementationDateChecker($this->id, $this->employee_ids, $this->implementation_date)
             ],
         ];
     }
@@ -50,17 +49,4 @@ class TaskAssignRequest extends FormRequest
             'employee_ids.*' => '担当者',
         ];
     }
-
-    /**
-     * バリーデーション前の整形処理
-     *
-     * @return void
-     */
-    // protected function prepareForValidation()
-    // {
-    //     if(!is_array($this->employee_ids)) {
-    //         $this->employee_ids = explode(',', $this->employee_ids);
-    //     }
-    //     // dd($this->employee_ids);
-    // }
 }
