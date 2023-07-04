@@ -18,18 +18,18 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/task_assign',
     name: 'taskAssign',
     component: TaskAssignIndex,
     props: true,
   },
   {
-    path: '/create',
+    path: '/task_assign/create',
     name: 'taskAssignCreate',
     component: TaskAssignCreate,
   },
   {
-    path: '/edit/:id',
+    path: '/task_assign/edit/:id',
     name: 'taskAssignEdit',
     component: TaskAssignEdit,
     props: true,

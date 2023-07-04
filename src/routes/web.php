@@ -7,9 +7,9 @@ require __DIR__.'/auth.php';
 
 
 
-Route::get('/landing', function () {
+Route::get('/', function () {
     if (Auth::check()) {
-        return redirect('/');
+        return redirect('/employee');
     } else {
         return view('landing');
     }
