@@ -32,7 +32,7 @@
         >
           <a
             class="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap  text-white"
-            href="{{ config('app.url') }}/landing"
+            href="{{ config('app.url') }}"
             >Devide Up</a
           ><button
             class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -189,7 +189,7 @@
                     class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400"
                   > --}}
                   <div class="flex justify-center">
-                    <img src="{{ asset('/storage/images/thinking_man.png') }}" width="100" class="m-auto">
+                    <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/thinking_man.png" width="100" class="m-auto">
                   </div>
                     {{-- <i class="fas fa-award"></i> --}}
                   {{-- </div> --}}
@@ -211,7 +211,7 @@
                     <i class="fas fa-retweet"></i>
                   </div> --}}
                   <div class="flex justify-center">
-                    <img src="{{ asset('/storage/images/browser.png') }}" width="100" class="m-auto">
+                    <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/browser.png" width="100" class="m-auto">
                   </div>
                   <h6 class="text-xl font-semibold mt-4">かんたん登録</h6>
                   <p class="mt-2 mb-4 text-gray-600">
@@ -231,7 +231,7 @@
                     <i class="fas fa-fingerprint"></i>
                   </div> --}}
                   <div class="flex justify-center">
-                    <img src="{{ asset('/storage/images/worker.png') }}" class="text-center" width="100" class="m-auto">
+                    <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/worker.png" class="text-center" width="100" class="m-auto">
                   </div>
                   <h6 class="text-xl font-semibold mt-4">現場作業の割り当てに特化</h6>
                   <p class="mt-2 mb-4 text-gray-600">
