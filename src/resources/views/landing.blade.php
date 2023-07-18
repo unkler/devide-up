@@ -4,12 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="./assets/img/apple-icon.png"
-    />
+    <link rel="shortcut icon" href="https://devide-up-bucket.s3.ap-northeast-1.amazonaws.com/images/favion/favicon.ico">
+  <link rel="apple-touch-icon" href="https://devide-up-bucket.s3.ap-northeast-1.amazonaws.com/images/favion/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://devide-up-bucket.s3.ap-northeast-1.amazonaws.com/images/favion/android-chrome-192x192.png">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -136,7 +133,7 @@
         class="relative pt-16 pb-32 flex content-center items-center justify-center"
         style="min-height: 75vh;"
       >
-      <div class="absolute top-0 w-full h-full bg-center bg-cover" style="background-image: url('{{ asset('storage/images/hero.jpg') }}');">
+      <div class="absolute top-0 w-full h-full bg-center bg-cover" style="background-image: url('https://devide-up-bucket.s3.ap-northeast-1.amazonaws.com/images/hero.jpg');">
           <span
             id="blackOverlay"
             class="w-full h-full absolute opacity-75 bg-black"
@@ -189,7 +186,7 @@
                     class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400"
                   > --}}
                   <div class="flex justify-center">
-                    <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/thinking_man.png" width="100" class="m-auto">
+                    <img src="https://devide-up-bucket.s3.ap-northeast-1.amazonaws.com/images/thinking_man.png" width="100" class="m-auto">
                   </div>
                     {{-- <i class="fas fa-award"></i> --}}
                   {{-- </div> --}}
@@ -211,7 +208,7 @@
                     <i class="fas fa-retweet"></i>
                   </div> --}}
                   <div class="flex justify-center">
-                    <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/browser.png" width="100" class="m-auto">
+                    <img src="https://devide-up-bucket.s3.ap-northeast-1.amazonaws.com/images/browser.png" width="100" class="m-auto">
                   </div>
                   <h6 class="text-xl font-semibold mt-4">かんたん登録</h6>
                   <p class="mt-2 mb-4 text-gray-600">
@@ -231,7 +228,7 @@
                     <i class="fas fa-fingerprint"></i>
                   </div> --}}
                   <div class="flex justify-center">
-                    <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/worker.png" class="text-center" width="100" class="m-auto">
+                    <img src="https://devide-up-bucket.s3.ap-northeast-1.amazonaws.com/images/worker.png" class="text-center" width="100" class="m-auto">
                   </div>
                   <h6 class="text-xl font-semibold mt-4">現場作業の割り当てに特化</h6>
                   <p class="mt-2 mb-4 text-gray-600">
