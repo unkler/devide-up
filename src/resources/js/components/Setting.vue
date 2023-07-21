@@ -1,5 +1,5 @@
 <template>
-  <div id="setting-container" :class="{'open-setting': isSettingOpen }"
+  <div :class="{'open-setting': isSettingOpen }"
     class="bg-white dark:bg-gray-800 absolute z-10 top-16 right-0 overflow-x-hidden w-0 h-full transition-all duration-200">
     <div class="flex justify-between mt-10 mx-4"> 
       <h2 class="font-medium text-gray-800 dark:text-gray-400">設定変更</h2>
@@ -110,19 +110,8 @@ export default {
 }
 </script>
 
-<style>
-#setting-container {
-  /* position: absolute;
-  z-index: 1;
-  top: 4rem;
-  right: 0; 
-  overflow-x: hidden;
-  width: 0;
-  height: 100%; */
-  /* transition: .2s; */
-}
-/* メニューを開いた時 */
-#setting-container.open-setting {
+<style scoped>
+.open-setting {
   width: 80%;
 }
 </style>  
