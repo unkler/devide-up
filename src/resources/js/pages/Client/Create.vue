@@ -137,7 +137,6 @@ export default {
         })
         .catch(error => {
           this.$toasted.error(errorMessage.systemError)
-          console.error(error)
         })
         .finally(() => {
           this.isLoading.prefectures = false

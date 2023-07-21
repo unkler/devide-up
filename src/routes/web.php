@@ -6,19 +6,10 @@ use Illuminate\Support\Facades\Auth;
 require __DIR__.'/auth.php';
 
 
-
 Route::get('/', function () {
-    if (Auth::check()) {
-        return redirect('/employee');
-    } else {
-        return view('landing');
-    }
+    return Auth::check() ? redirect('/employee') : view('landing');
 });
 
 Route::get('/{any?}', function () {
-    if (Auth::check()) {
-        return view('app');
-    } else {
-        return redirect('/login');
-    }
+    return Auth::check() ? view('app') : redirect('/login');
 })->where('any', '.*');

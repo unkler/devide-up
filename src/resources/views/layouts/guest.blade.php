@@ -10,9 +10,9 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <link rel="shortcut icon" href="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/favion/favicon.ico">
-        <link rel="apple-touch-icon" href="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/favion/apple-touch-icon.png">
-        <link rel="icon" type="image/png" href="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/favion/android-chrome-192x192.png">
+        <link rel="shortcut icon" href="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" href="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/favicon/android-chrome-192x192.png">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])

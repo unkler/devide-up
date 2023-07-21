@@ -47,7 +47,6 @@ export default {
           location.href = '/login'
         })
         .catch(error => {
-          console.error(error)
           this.$toasted.error(errorMessage.systemError)
         })
         .finally(() => {

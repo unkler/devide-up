@@ -87,7 +87,7 @@ class EmployeeController extends Controller
      */
     public function store(EmployeeRequest $request, StoreEmployeeUseCase $use_case): int
     {
-        $employee_data = new EmployeeData(null, Auth::id(), $request->contract_type_id, $request->last_name,$request->first_name,
+        $employee_data = new EmployeeData(null, Auth::id(), $request->contract_type_id, $request->last_name, $request->first_name,
             $request->last_name_kana, $request->first_name_kana, $request->post_code, $request->prefecture_id,
             $request->address, $request->phone_number, $request->email, $request->birthday);
 

@@ -1,5 +1,6 @@
 const infoMessage = {
-  succeededDelete: '削除しました'
+  succeededEdit: '変更しました',
+  succeededDelete: '削除しました',
 }
 
 const errorMessage = {

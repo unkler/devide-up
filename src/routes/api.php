@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\TaskAssignController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\WorkplaceController;
 use App\Http\Controllers\ClientController;
@@ -21,6 +23,17 @@ use App\Http\Controllers\ClientController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+Route::get('/authenticated', function() {
+    return response()->json([
+        'is_authenticated' => Auth::check(),
+    ]);
+});
+
+Route::prefix('/setting')->group(function() {
+    Route::get('/fetch_user', [SettingController::class, 'fetchUser']);
+    Route::post('/update', [SettingController::class, 'update']);
+});
 
 Route::prefix('/task_assign')->group(function() {
     Route::get('/', [TaskAssignController::class, 'index']);
