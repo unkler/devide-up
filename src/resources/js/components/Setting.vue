@@ -1,6 +1,6 @@
 <template>
-  <div :class="{'w-4/5': isSettingOpen }"
-    class="bg-white dark:bg-gray-800 absolute z-10 top-16 right-0 overflow-x-hidden w-0 h-full transition-all duration-200">
+  <div id="setting-container" :class="{'open-setting': isSettingOpen }"
+    class="bg-white dark:bg-gray-800 absolute z-10 top-16 right-0 overflow-x-hidden w-0 h-full">
     <div class="flex justify-between mt-10 mx-4"> 
       <h2 class="font-medium text-gray-800 dark:text-gray-400">設定変更</h2>
       <button @click="toggleSetting" class="text-gray-600 hover:text-gray-500 dark:text-gray-400 text-3xl" title="閉じる">
@@ -66,17 +66,6 @@ export default {
     toggleSetting() {
       this.isSettingOpen = !this.isSettingOpen
     },
-    isAuthenticated() {
-      axios.get('/api/authenticated')
-        .then(res => {
-          if(res.data.is_authenticated) {
-            this.getUser()
-          }
-        })
-        .catch(error => {
-          this.$toasted.error(errorMessage.systemError)
-        })
-    },
     getUser() {
       axios.get('/api/setting/fetch_user')
         .then(res => {
@@ -105,8 +94,24 @@ export default {
     }
    },
    created() {
-    this.isAuthenticated()
-    // this.getUser()
+    this.getUser()
    }
 }
 </script>
+
+<style>
+#setting-container {
+  /* position: absolute;
+  z-index: 1;
+  top: 4rem;
+  right: 0; 
+  overflow-x: hidden;
+  width: 0;
+  height: 100%; */
+  transition: .2s;
+}
+/* メニューを開いた時 */
+#setting-container.open-setting {
+  width: 80%;
+}
+</style>  
