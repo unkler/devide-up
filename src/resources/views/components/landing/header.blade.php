@@ -14,4 +14,5 @@
   <link rel="apple-touch-icon" href="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/favicon/android-chrome-192x192.png">
   @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <meta name="google-site-verification" content="mNcZwcje9HEUWIjvMap6SLlkEb8Phno55uS2LhivPKA" />
 </head>
