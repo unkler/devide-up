@@ -28,3 +28,13 @@ import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 
 Alpine.start();
+
+/* LPページのアニメーション */
+import ScrollReveal from 'scrollreveal'
+
+ScrollReveal().reveal('.scroll-reveal', { 
+  duration: 1600, 
+  origin: 'top', 
+  distance: '50px',
+  reset: false,
+});

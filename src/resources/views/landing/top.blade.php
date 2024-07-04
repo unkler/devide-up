@@ -17,7 +17,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
         <div class="items-center flex flex-wrap">
           <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
             <div class="pr-12">
-              <h1 class="text-white font-semibold text-5xl">
+              <h1 class="text-white font-semibold text-4xl">
                 現場の割り振りを簡単・正確に管理
               </h1>
               <p class="mt-4 text-lg text-gray-300">
@@ -40,7 +40,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap">
           <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
-            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg scroll-reveal">
               <div class="px-4 py-5 flex-auto">
                 <div class="flex justify-center">
                   <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/thinking_man.png" width="100"
@@ -54,7 +54,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
             </div>
           </div>
           <div class="w-full md:w-4/12 px-4 text-center">
-            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg scroll-reveal">
               <div class="px-4 py-5 flex-auto">
                 <div class="flex justify-center">
                   <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/browser.png" width="100"
@@ -68,7 +68,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
             </div>
           </div>
           <div class="pt-6 w-full md:w-4/12 px-4 text-center">
-            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg scroll-reveal">
               <div class="px-4 py-5 flex-auto">
                 <div class="flex justify-center">
                   <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/worker.png" class="text-center"
@@ -82,7 +82,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
             </div>
           </div>
         </div>
-        <div class="flex flex-wrap items-center mt-32">
+        <div class="flex flex-wrap items-center mt-32 scroll-reveal">
           <div class="w-full px-4 mr-auto ml-auto">
             <div class="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-blue-800">
               <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/landing_expain01.png"
@@ -122,7 +122,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
               <span class="text-3xl">よくある質問</span>
             </h2>
           </div>
-          <div class="m-2 space-y-2">
+          <div class="m-2 space-y-2 scroll-reveal">
             <div class="group flex flex-col gap-2 rounded-lg bg-blue-800 p-5 text-white" tabindex="1">
               <div class="flex cursor-pointer items-center justify-between">
                 <span class="text-lg border-b-2">なぜ全ての機能が無料で提供できるのですか？</span>
