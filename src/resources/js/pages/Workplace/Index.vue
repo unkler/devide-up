@@ -37,21 +37,21 @@
                   <template v-else>
                     <img class="rounded-t-lg" src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/no_image.jpg" />
                   </template>
-                  <div @click.stop="openDropDown(workplace.id)" v-click-outside="closeDropDown" class="absolute top-[234px] right-1 w-10 h-10 leading-10 text-center hover:bg-gray-200 rounded-full text-lg cursor-pointer">
+                  <div @click.stop="openDropDown(workplace.id)" v-click-outside="closeDropDown" class="absolute top-[234px] right-1 w-10 h-10 leading-10 text-center dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full text-lg cursor-pointer">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                   </div>
                   <DropDown top="top-12" left="left-60" :subject="workplace" linkName="workplaceEdit" @receiveId="deleteWorkplace" class="absolute" />
                   <div class="p-5">
-                    <div class="mb-2 text-lg font-bold text-gray-900 dark:text-white">
+                    <div class="mb-2 text-lg font-bold text-gray-900 dark:text-gray-400">
                       {{ workplace.clients.name }}
                     </div>
-                    <div class="mb-2 text-base font-bold text-gray-900 dark:text-white">
+                    <div class="mb-2 text-base font-bold text-gray-900 dark:text-gray-400">
                       {{ workplace.name }}
                     </div>
                     <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                       <i class="fa-solid fa-location-dot mr-2"></i>{{ workplace.post_code }} {{ workplace.prefectures.name }}{{ workplace.address }}
                     </div>
-                    <div class="mb-2 text-base text-gray-900 dark:text-white">
+                    <div class="mb-2 text-base text-gray-900 dark:text-gray-400">
                       <i class="fa-solid fa-phone mr-2"></i>{{ workplace.phone_number }}
                     </div>
                   </div>
