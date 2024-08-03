@@ -17,16 +17,16 @@
                   <ValidationProvider name="姓" rules="required|max:30" v-slot="{ errors }" class="w-full mr-2">
                     <input type="text" v-model="employee.last_name" id="last_name" name="last_name" maxlength="30"
                       class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 ">
-                    <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                    <div v-if="errors.length === 0 && serverValidationMessage.errors?.last_name !== undefined" class="text-red-500 text-sm">
+                    <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                    <div v-if="errors.length === 0 && serverValidationMessage.errors?.last_name !== undefined" class="text-red-500 dark:text-white text-sm">
                       {{ serverValidationMessage.errors.last_name[0] }}
                     </div>
                   </ValidationProvider>
                   <ValidationProvider name="名" rules="required|max:30" v-slot="{ errors }" class="w-full">
                     <input type="text" v-model="employee.first_name" id="first_name" name="first_name" maxlength="30"
                       class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                    <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                    <div v-if="errors.length === 0 && serverValidationMessage.errors?.first_name !== undefined" class="text-red-500 text-sm">
+                    <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                    <div v-if="errors.length === 0 && serverValidationMessage.errors?.first_name !== undefined" class="text-red-500 dark:text-white text-sm">
                       {{ serverValidationMessage.errors.first_name[0] }}
                     </div>
                   </ValidationProvider>
@@ -38,16 +38,16 @@
                   <ValidationProvider name="セイ" rules="required|max:30" v-slot="{ errors }" class="w-full mr-2">
                     <input type="text" v-model="employee.last_name_kana" id="last_name_kana" name="last_name_kana" maxlength="30"
                       class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                    <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                    <div v-if="errors.length === 0 && serverValidationMessage.errors?.first_name_kana !== undefined" class="text-red-500 text-sm">
+                    <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                    <div v-if="errors.length === 0 && serverValidationMessage.errors?.first_name_kana !== undefined" class="text-red-500 dark:text-white text-sm">
                       {{ serverValidationMessage.errors.first_name_kana[0] }}
                     </div>
                   </ValidationProvider>
                   <ValidationProvider name="メイ" rules="required|max:30" v-slot="{ errors }" class="w-full mr-2">
                     <input type="text" v-model="employee.first_name_kana"  id="first_name_kana" name="first_name_kana" maxlength="30"
                       class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                    <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                    <div v-if="errors.length === 0 && serverValidationMessage.errors?.last_name_kana !== undefined" class="text-red-500 text-sm">
+                    <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                    <div v-if="errors.length === 0 && serverValidationMessage.errors?.last_name_kana !== undefined" class="text-red-500 dark:text-white text-sm">
                       {{ serverValidationMessage.errors.last_name_kana[0] }}
                     </div>
                   </ValidationProvider>
@@ -61,8 +61,8 @@
                     <option value=""></option>
                     <option v-for="contractType, index in contractTypes" :key="index" :value="index">{{ contractType  }}</option>                  
                   </select>
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.contract_type_id !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.contract_type_id !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.contract_type_id[0] }}
                   </div>
                 </ValidationProvider>
@@ -73,8 +73,8 @@
                   <input type="text" v-model="employee.post_code" @focusout="searchAddress" id="post_code"
                     name="post_code" maxlength="8"
                     class="p-postal-code w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.post_code !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.post_code !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.post_code[0] }}
                   </div>
                 </ValidationProvider>
@@ -87,8 +87,8 @@
                     <option value=""></option>
                     <option v-for="prefecture, index in prefectures" :key="index" :value="index">{{ prefecture }}</option>                  
                   </select>
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.prefecture_id !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.prefecture_id !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.prefecture_id[0] }}
                   </div>
                 </ValidationProvider>
@@ -98,8 +98,8 @@
                 <ValidationProvider name="住所" rules="required|max:255" v-slot="{ errors }">
                   <input type="text" v-model="employee.address" id="address" name="address" maxlength="255"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.address !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.address !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.address[0] }}
                   </div>
                 </ValidationProvider>
@@ -109,8 +109,8 @@
                 <ValidationProvider name="電話番号" rules="required|max:21" v-slot="{ errors }">
                   <input type="text" v-model="employee.phone_number" id="phone_number" name="phone_number" maxlength="21"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.phone_number !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.phone_number !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.phone_number[0] }}
                   </div>
                 </ValidationProvider>
@@ -120,8 +120,8 @@
                 <ValidationProvider name="メールアドレス" rules="required|email|max:254" v-slot="{ errors }">
                   <input type="text" v-model="employee.email"  id="email" name="email" maxlength="254"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.email !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.email !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.email[0] }}
                   </div>
                 </ValidationProvider>
@@ -131,8 +131,8 @@
                 <ValidationProvider name="生年月日" rules="required" v-slot="{ errors }">
                   <datepicker :language="jaDatepicker" format="yyyy-MM-dd" v-model="employee.birthday" id="birthday" name="birthday"
                     input-class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8"></datepicker>
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.birthday !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.birthday !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.birthday[0] }}
                   </div>
                 </ValidationProvider>
@@ -161,8 +161,8 @@
                     <img :src="profileImagePreview" class="w-auto h-auto max-w-full max-h-full rounded-md"/>
                   </div>
                 </div>
-                <div v-show="profileImageError" class="text-red-500 text-sm">{{ profileImageError }}</div>
-                <div v-if="profileImageError === null && serverValidationMessage.errors?.profile_image !== undefined" class="text-red-500 text-sm">
+                <div v-show="profileImageError" class="text-red-500 dark:text-white text-sm">{{ profileImageError }}</div>
+                <div v-if="profileImageError === null && serverValidationMessage.errors?.profile_image !== undefined" class="text-red-500 dark:text-white text-sm">
                   {{ serverValidationMessage.errors.profile_image[0] }}
                 </div>
               </div>
