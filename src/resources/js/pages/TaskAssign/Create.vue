@@ -21,8 +21,8 @@
                       <option v-for="workplace in client.workplaces" :key="workplace.id" :value="workplace.id">{{ workplace.name }}</option>
                     </optgroup> 
                   </select>
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.workplace_id !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.workplace_id !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.workplace_id[0] }}
                   </div>
                 </ValidationProvider>
@@ -32,8 +32,8 @@
                 <label for="employeeIds" class="leading-7 text-sm text-gray-600 dark:text-gray-400">担当者</label>
                 <ValidationProvider name="担当者" rules="required" v-slot="{ errors }">
                   <Employee :employees="employees" @receiveEmployeeIds="setEmployeeIds" />
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <!-- <div v-if="serverValidationMessage.errors?.employee_ids !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <!-- <div v-if="serverValidationMessage.errors?.employee_ids !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.employee_ids[0] }}
                   </div> -->
                 </ValidationProvider>
@@ -43,8 +43,8 @@
                 <ValidationProvider name="実施日" rules="required" v-slot="{ errors }">
                   <Datepicker :language="jaDatepicker" format="yyyy-MM-dd" v-model="taskAssign.implementation_date" id="implementation_date" name="implementation_date" placeholder="0000-00-00"
                     input-class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8"></Datepicker>
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.implementation_date !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.implementation_date !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.implementation_date[0] }}
                   </div>
                 </ValidationProvider>

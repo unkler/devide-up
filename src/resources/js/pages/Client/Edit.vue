@@ -16,8 +16,8 @@
                 <ValidationProvider name="取引名" rules="required|max:255" v-slot="{ errors }">
                   <input type="text" v-model="client.name" id="name" name="name" maxlength="255"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.name !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.name !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.name[0] }}
                   </div>
                 </ValidationProvider>
@@ -27,8 +27,8 @@
                 <ValidationProvider name="郵便番号" rules="required|max:8" v-slot="{ errors }">
                   <input type="text" v-model="client.post_code" @focusout="searchAddress" id="post_code" name="post_code" maxlength="8"
                     class="p-postal-code w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.post_code !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.post_code !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.post_code[0] }}
                   </div>
                 </ValidationProvider>
@@ -41,8 +41,8 @@
                     <option value=""></option>
                     <option v-for="prefecture, index in prefectures" :key="index" :value="index">{{ prefecture }}</option>                  
                   </select>
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.prefecture_id !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.prefecture_id !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.prefecture_id[0] }}
                   </div>
                 </ValidationProvider>
@@ -52,8 +52,8 @@
                 <ValidationProvider name="住所" rules="required|max:255" v-slot="{ errors }">
                   <input type="text" v-model="client.address" id="address" name="address" maxlength="255"
                     class="p-region p-locality p-street-address p-extended-address w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.address !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.address !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.address[0] }}
                   </div>
                 </ValidationProvider>
@@ -63,8 +63,8 @@
                 <ValidationProvider name="電話番号" rules="required|max:21" v-slot="{ errors }">
                   <input type="text" v-model="client.phone_number" id="phone_number" name="phone_number" maxlength="21"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.phone_number !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.phone_number !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.phone_number[0] }}
                   </div>
                 </ValidationProvider>
@@ -74,8 +74,8 @@
                 <ValidationProvider name="メールアドレス" rules="required|email|max:254" v-slot="{ errors }">
                   <input type="text" v-model="client.email"  id="email" name="email" maxlength="254"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8">
-                  <div v-if="errors" class="text-red-500 text-sm">{{ errors[0] }}</div>
-                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.email !== undefined" class="text-red-500 text-sm">
+                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
+                  <div v-if="errors.length === 0 && serverValidationMessage.errors?.email !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.email[0] }}
                   </div>
                 </ValidationProvider>
