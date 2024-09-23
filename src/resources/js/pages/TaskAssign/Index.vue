@@ -2,8 +2,8 @@
   <div class="w-full bg-gray-100 dark:bg-gray-700">
     <div class="flex mt-10 mx-4"> 
       <h2 class="font-medium text-gray-800 mr-5 dark:text-gray-400">作業一覧</h2>
-      <div @click="getTaskAssign(true)" :class="{'bg-gray-700 text-white dark:bg-white dark:text-gray-800': isAfterToday}" class="text-gray-800 bg-white text-sm rounded-xl p-2 mr-2 cursor-pointer dark:text-gray-400 dark:bg-gray-600">本日以降の作業</div>
-      <div @click="getTaskAssign(false)" :class="{'bg-gray-700 text-white dark:bg-white dark:text-gray-800': !isAfterToday }" class="text-gray-800 bg-white text-sm rounded-xl p-2 cursor-pointer dark:text-gray-400 dark:bg-gray-600">過去の作業</div>
+      <div @click="getTaskAssign(true)" :class="{'bg-gray-700 text-white dark:bg-white dark:text-gray-800': isAfterToday}" class="bg-white text-sm rounded-xl p-2 mr-2 cursor-pointer dark:text-gray-400 dark:bg-gray-600">本日以降の作業</div>
+      <div @click="getTaskAssign(false)" :class="{'bg-gray-700 text-white dark:bg-white dark:text-gray-800': !isAfterToday }" class="bg-white text-sm rounded-xl p-2 cursor-pointer dark:text-gray-400 dark:bg-gray-600">過去の作業</div>
       <router-link :to="{ name: 'taskAssignCreate' }" class="flex text-xs ml-auto text-white bg-blue-800 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-600">
         <span><i class="fa-solid fa-plus dark:text-gray-400 mr-2 text-center"></i></span>
         <span>新規登録</span>
