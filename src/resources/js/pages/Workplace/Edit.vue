@@ -91,7 +91,7 @@
                     <i class="fa-solid fa-plus mr-2"></i>追加
                   </label>
                 </div>
-                <div v-if="workplace.workplace_images" class="relative w-72 h-[216px] bg-gray-800 rounded-lg">
+                <div v-if="workplace.workplace_images && workplace.workplace_images.length > 0" class="relative w-72 h-[216px] bg-gray-800 rounded-lg">
                   <div @click="deleteRegisteredImage" class="absolute right-0 w-7 h-7  bg-gray-500 text-white rounded-tr-md text-center cursor-pointer">
                     <i class="fa-solid fa-xmark leading-7"></i>
                   </div>
