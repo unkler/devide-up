@@ -16,3 +16,12 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   <meta name="google-site-verification" content="mNcZwcje9HEUWIjvMap6SLlkEb8Phno55uS2LhivPKA" />
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NRFV8ZXFEE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NRFV8ZXFEE');
+</script>
