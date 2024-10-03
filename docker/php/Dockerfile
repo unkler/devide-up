@@ -54,3 +54,6 @@ RUN apt-get install -y nodejs
 
 RUN npm install
 RUN npm run build
+
+# php artisan queue:work コマンドを実行
+CMD ["php", "artisan", "queue:work", "--sleep=3", "--tries=3"]
