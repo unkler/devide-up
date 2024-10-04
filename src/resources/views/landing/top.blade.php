@@ -17,9 +17,9 @@ Devide Up | 現場作業向け スケジュール管理ツール
         <div class="items-center flex flex-wrap">
           <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
             <div class="pr-12">
-              <h1 class="text-white font-semibold text-4xl">
+              <h2 class="text-white font-semibold text-4xl">
                 現場の割り振りを簡単・正確に管理
-              </h1>
+              </h2>
               <p class="mt-4 text-lg text-gray-300">
                 直感的なインターフェースと柔軟なスケジュール管理で、タスクの割り当てを容易に。
                 適切な役割分担と効果的なリソース配分で社内の生産性を最大化。
@@ -62,7 +62,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
                 </div>
                 <h6 class="text-xl font-semibold mt-4">かんたん登録</h6>
                 <p class="mt-2 mb-4 text-gray-600">
-                  「ユーザー名」「メールアドレス」「パスワード」を登録するだけで、全ての機能が無料で利用可能。
+                  「ユーザー名」 「メールアドレス」 「パスワード」を登録するだけで、全ての機能が無料で利用可能。
                 </p>
               </div>
             </div>
@@ -106,7 +106,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
         </div>
       </div>
     </section>
-    <section class="relative block bg-gray-900">
+    <section class="relative block bg-gray-900 pb-5">
       <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
         style="height: 80px;">
         <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"

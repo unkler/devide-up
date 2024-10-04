@@ -17,9 +17,9 @@
         <div class="items-center flex flex-wrap">
           <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
             <div class="pr-12">
-              <h1 class="text-white font-semibold text-5xl">
+              <h2 class="text-white font-semibold text-5xl">
                 運営元
-              </h1>
+              </h2>
               <p class="mt-4 text-lg text-gray-300">
                 エンジニア歴10年以上のベテランが手がける信頼のおける技術力を活かした高品質なサービス
               </p>

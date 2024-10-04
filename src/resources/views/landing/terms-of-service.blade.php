@@ -17,9 +17,9 @@
         <div class="items-center flex flex-wrap">
           <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
             <div class="pr-12">
-              <h1 class="text-white font-semibold text-5xl">
+              <h2 class="text-white font-semibold text-5xl">
                 利用規約
-              </h1>
+              </h2>
               <p class="mt-4 text-lg text-gray-300">
                 この利用規約（以下、「本規約」といいます。）は、ウェブサービス「Devide Up」上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。
                 ご利用ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。

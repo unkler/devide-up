@@ -17,9 +17,9 @@
         <div class="items-center flex flex-wrap">
           <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
             <div class="pr-12">
-              <h1 class="text-white font-semibold text-5xl">
+              <h2 class="text-white font-semibold text-5xl">
                 プライバシーポリシー
-              </h1>
+              </h2>
               <p class="mt-4 text-lg text-gray-300">
                 当サイトは、当サイトが取得した個人情報の取扱いに関し、個人情報の保護に関する法律、個人情報保護に関するガイドライン等の指針、その他個人情報保護に関する関係法令を遵守します。
               </p>
