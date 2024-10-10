@@ -44,9 +44,9 @@ Devide Up | 現場作業向け スケジュール管理ツール
               <div class="px-4 py-5 flex-auto">
                 <div class="flex justify-center">
                   <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/thinking_man.png" width="100"
-                    class="m-auto">
+                    class="m-auto" alt="エクセルでの管理から脱却">
                 </div>
-                <h6 class="text-xl font-semibold mt-4">エクセルでの管理から脱却</h6>
+                <h3 class="text-xl font-semibold mt-4">エクセルでの管理から脱却</h3>
                 <p class="mt-2 mb-4 text-gray-600">
                   ユーザーの使いやすさを最優先に考え、シンプルなデザインを採用。直感的な操作性と視覚的な整合性により、ストレスのないシームレスな体験を提供。
                 </p>
@@ -58,9 +58,9 @@ Devide Up | 現場作業向け スケジュール管理ツール
               <div class="px-4 py-5 flex-auto">
                 <div class="flex justify-center">
                   <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/browser.png" width="100"
-                    class="m-auto">
+                    class="m-auto" alt="かんたん登録">
                 </div>
-                <h6 class="text-xl font-semibold mt-4">かんたん登録</h6>
+                <h3 class="text-xl font-semibold mt-4">かんたん登録</h3>
                 <p class="mt-2 mb-4 text-gray-600">
                   「ユーザー名」 「メールアドレス」 「パスワード」を登録するだけで、全ての機能が無料で利用可能。
                 </p>
@@ -72,9 +72,9 @@ Devide Up | 現場作業向け スケジュール管理ツール
               <div class="px-4 py-5 flex-auto">
                 <div class="flex justify-center">
                   <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/worker.png" class="text-center"
-                    width="100" class="m-auto">
+                    width="100" class="m-auto" alt="現場作業の割り当てに特化">
                 </div>
-                <h6 class="text-xl font-semibold mt-4">現場作業の割り当てに特化</h6>
+                <h3 class="text-xl font-semibold mt-4">現場作業の割り当てに特化</h3>
                 <p class="mt-2 mb-4 text-gray-600">
                   スケジュールや作業の可視化し、正確な管理で現場作業を最適化。
                 </p>
@@ -86,7 +86,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
           <div class="w-full px-4 mr-auto ml-auto">
             <div class="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-blue-800">
               <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/landing_expain01.png"
-                class="w-full align-middle rounded-t-lg" />
+                class="w-full align-middle rounded-t-lg" alt="操作画面イメージ" />
               <blockquote class="relative p-8 mb-4">
                 <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
                   class="absolute left-0 w-full block" style="height: 95px; top: -94px;">
@@ -127,7 +127,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
               <div class="flex cursor-pointer items-center justify-between">
                 <span class="text-lg border-b-2">なぜ全ての機能が無料で提供できるのですか？</span>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                  class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
+                  class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" alt="toggle button" />
               </div>
               <div
                 class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
@@ -139,7 +139,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
               <div class="flex cursor-pointer items-center justify-between">
                 <span class="text-lg border-b-2">データに関しての機密性は守られていますか？</span>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                  class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
+                  class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" alt="toggle button" />
               </div>
               <div
                 class="invisible h-auto max-h-0 opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
@@ -152,7 +152,7 @@ Devide Up | 現場作業向け スケジュール管理ツール
               <div class="flex cursor-pointer items-center justify-between">
                 <span class="text-lg border-b-2">ユーザー情報は広告ターゲティングに使用されるのでしょうか？</span>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                  class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" />
+                  class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180" alt="toggle button" />
               </div>
               <div
                 class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
