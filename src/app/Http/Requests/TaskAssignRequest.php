@@ -27,7 +27,7 @@ class TaskAssignRequest extends FormRequest
     {
         return [
             'workplace_id' => ['required', 'integer', 'exists:workplaces,id'],
-            'employee_ids' => ['array'],
+            'employee_ids' => ['required', 'array', 'min:1'],
             'employee_ids.*' => ['required', 'integer', 'exists:employees,id'],
             'implementation_date' => ['required', 'string', 'date_format:Y-m-d', 'after_or_equal:today',
                 new WorkplaceAndImplementationDateChecker($this->id, $this->workplace_id, $this->implementation_date),

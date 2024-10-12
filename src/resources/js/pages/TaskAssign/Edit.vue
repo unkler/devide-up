@@ -31,13 +31,10 @@
               <WorkplaceInTaskAssign :workplace="workplace" />
               <div class="md:w-4/5 mx-auto p-2">
                 <label for="employeeIds" class="leading-7 text-sm text-gray-600 dark:text-gray-400">担当者</label>
-                <ValidationProvider name="担当者" rules="required" v-slot="{ errors }">
-                    <Employee :employees="employees" :oldEmployees="taskAssign.employees" @receiveEmployeeIds="setEmployeeIds"></Employee>
-                  <div v-if="errors" class="text-red-500 dark:text-white text-sm">{{ errors[0] }}</div>
-                  <!-- <div v-if="serverValidationMessage.errors?.employee_ids !== undefined" class="text-red-500 dark:text-white text-sm">
+                  <Employee :employees="employees" :oldEmployees="taskAssign.employees" @receiveEmployeeIds="setEmployeeIds"></Employee>
+                  <div v-if="serverValidationMessage.errors?.employee_ids !== undefined" class="text-red-500 dark:text-white text-sm">
                     {{ serverValidationMessage.errors.employee_ids[0] }}
-                  </div> -->
-                </ValidationProvider>
+                  </div>
               </div>
 
               <div class="md:w-4/5 mx-auto p-2">
@@ -96,7 +93,11 @@ export default {
   },
   data() {
     return {
-      taskAssign: {},
+      taskAssign: {
+        workplace_id: null,
+        employee_ids: [],
+        implementation_date: null,
+      },
       clientsWithWorkplaces: {},
       employees: [],
       workplace: {},
