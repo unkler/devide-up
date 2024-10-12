@@ -46,7 +46,7 @@ export default {
         if(registrationId === e.target.value || e.target.value === '') return true
       })
 
-      if (!isDuplication) {
+      if (!isDuplication && e.target.value !== '') {
         this.registrationLists.push({
           id: e.target.value,
           name: e.target.selectedOptions[0].text,
@@ -81,7 +81,8 @@ export default {
           name: oldEmployee.last_name + oldEmployee.first_name
         })
 
-        this.registrationIds.push(String(oldEmployee.id))
+        this.registrationIds.push(oldEmployee.id)
+        // this.registrationIds.push(String(oldEmployee.id))
       })
     }
   }
