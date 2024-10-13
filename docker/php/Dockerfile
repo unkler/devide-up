@@ -49,7 +49,7 @@ RUN composer install -q -n --no-ansi --no-scripts --no-progress --prefer-dist \
   && php artisan route:clear \
   && php artisan view:clear 
 
-RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
 RUN npm install
