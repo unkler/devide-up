@@ -1,4 +1,5 @@
 <x-guest-layout>
+    @section('title', __('パスワードの確認') . ' | ' . config('app.name', 'Devide Up'))
     <x-auth-card>
         <div class="mb-4 text-sm text-gray-600">
             {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}

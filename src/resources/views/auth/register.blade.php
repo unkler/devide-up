@@ -1,4 +1,5 @@
 <x-guest-layout>
+    @section('title', __('Free Registration') . ' | ' . config('app.name', 'Devide Up'))
     <x-auth-card>
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
