@@ -8,7 +8,7 @@
         <img class="object-cover w-full rounded-t-lg md:h-auto md:w-64 md:rounded-none md:rounded-l-lg" src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/no_image.jpg" />
       </template>
       <div class="flex flex-col justify-between p-4 leading-normal">
-        <div class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
+        <div class="mb-2 font-bold tracking-tight text-gray-900 dark:text-gray-400">
           {{ workplace.clients.name }}
         </div>
         <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">

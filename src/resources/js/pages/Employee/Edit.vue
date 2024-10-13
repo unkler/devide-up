@@ -4,7 +4,7 @@
       <h2 class="font-medium text-gray-800 mr-5 dark:text-gray-400">社員編集</h2>
     </div>
     <div v-if="isLoading.employee || isLoading.contractTypes || isLoading.prefectures">
-      <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/loading.gif" class="mx-auto mt-20" />
+      <vue-loading type="spin" color="#656565" :size="{ width: '150px', height: '150px' }"></vue-loading>
     </div>
     <div v-else>
       <div class="mx-4 my-5">
@@ -186,6 +186,7 @@ import jsonpAdapter from 'axios-jsonp'
 import Datepicker from 'vuejs-datepicker'
 import { ja } from 'vuejs-datepicker/dist/locale'
 import dayjs from 'dayjs'
+import { VueLoading } from 'vue-loading-template'
 import { replaceToHalfWidth } from '../../common'
 import { errorMessage } from '../../constants/message'
 import ImageUtil from '../../ImageUtil'
@@ -201,6 +202,7 @@ export default {
     ValidationProvider,
     ValidationObserver,
     Datepicker,
+    VueLoading,
   },
   props: {
     id: {

@@ -4,7 +4,7 @@
       <h2 class="font-medium text-gray-800 mr-5 dark:text-gray-400">作業編集</h2>
     </div>
     <div v-if="isLoading.taskAssign || isLoading.clientsWithWorkplaces || isLoading.employees || isLoading.workplace">
-      <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/loading.gif" class="mx-auto mt-20" />
+      <vue-loading type="spin" color="#656565" :size="{ width: '150px', height: '150px' }"></vue-loading>
     </div>
     <div v-else>
       <div class="mx-4 mt-5">
@@ -68,6 +68,7 @@ import jaVeeValidate from 'vee-validate/dist/locale/ja'
 import Datepicker from 'vuejs-datepicker'
 import { ja } from 'vuejs-datepicker/dist/locale'
 import dayjs from 'dayjs'
+import { VueLoading } from 'vue-loading-template'
 import { errorMessage } from '../../constants/message'
 import Employee from '../../components/Employee.vue'
 import WorkplaceInTaskAssign from '../../components/WorkplaceInTaskAssign.vue'
@@ -82,6 +83,7 @@ export default {
     ValidationProvider,
     ValidationObserver,
     Datepicker,
+    VueLoading,
     Employee,
     WorkplaceInTaskAssign,
   },
