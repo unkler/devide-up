@@ -82,7 +82,6 @@ export default {
         })
 
         this.registrationIds.push(oldEmployee.id)
-        // this.registrationIds.push(String(oldEmployee.id))
       })
     }
   }
