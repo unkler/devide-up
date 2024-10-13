@@ -37,6 +37,16 @@ jobs:
         with:
           node-version: '18' # 使用するNode.jsバージョンを指定してください
 
+      # GithubActions内のpackage-lock.jsonのキャッシュをクリア
+      - name: Setup cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Set up Composer
         run: |
           curl -sS https://getcomposer.org/installer -o composer-setup.php
