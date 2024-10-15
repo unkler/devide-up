@@ -4,7 +4,7 @@
       <h2 class="font-medium text-gray-800 mr-5 dark:text-gray-400">社員編集</h2>
     </div>
     <div v-if="isLoading.employee || isLoading.contractTypes || isLoading.prefectures">
-      <vue-loading type="spin" color="#656565" :size="{ width: '150px', height: '150px' }"></vue-loading>
+      <Spinner v-if="isLoading" size="130" :line-size="12" line-fg-color="#656565" class="mt-32" />
     </div>
     <div v-else>
       <div class="mx-4 my-5">
@@ -186,7 +186,7 @@ import jsonpAdapter from 'axios-jsonp'
 import Datepicker from 'vuejs-datepicker'
 import { ja } from 'vuejs-datepicker/dist/locale'
 import dayjs from 'dayjs'
-import { VueLoading } from 'vue-loading-template'
+import Spinner from 'vue-simple-spinner'
 import { replaceToHalfWidth } from '../../common'
 import { errorMessage } from '../../constants/message'
 import ImageUtil from '../../ImageUtil'
@@ -202,7 +202,7 @@ export default {
     ValidationProvider,
     ValidationObserver,
     Datepicker,
-    VueLoading,
+    Spinner,
   },
   props: {
     id: {

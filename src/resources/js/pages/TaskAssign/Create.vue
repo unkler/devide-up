@@ -4,7 +4,7 @@
       <h2 class="font-medium text-gray-800 mr-5 dark:text-gray-400">作業登録</h2>
     </div>
     <div v-if="isLoading.clientsWithWorkplaces || isLoading.employees">
-      <vue-loading type="spin" color="#656565" :size="{ width: '150px', height: '150px' }"></vue-loading>
+      <Spinner v-if="isLoading" size="130" :line-size="12" line-fg-color="#656565" class="mt-32" />
     </div>
     <div v-else>
       <div class="mx-4 mt-5">
@@ -65,7 +65,7 @@ import jaVeeValidate from 'vee-validate/dist/locale/ja'
 import Datepicker from 'vuejs-datepicker'
 import { ja } from 'vuejs-datepicker/dist/locale'
 import dayjs from 'dayjs'
-import { VueLoading } from 'vue-loading-template'
+import Spinner from 'vue-simple-spinner'
 import { errorMessage } from '../../constants/message'
 import Employee from '../../components/Employee.vue'
 import WorkplaceInTaskAssign from '../../components/WorkplaceInTaskAssign.vue'
@@ -80,7 +80,7 @@ export default {
     ValidationProvider,
     ValidationObserver,
     Datepicker,
-    VueLoading,
+    Spinner,
     Employee,
     WorkplaceInTaskAssign,
   },

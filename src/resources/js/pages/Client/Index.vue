@@ -19,7 +19,7 @@
     </div>
     <FlashMessage v-show="registeredResult" />
     <div v-if="isLoading">
-      <vue-loading type="spin" color="#656565" :size="{ width: '150px', height: '150px' }"></vue-loading>
+      <Spinner v-if="isLoading" size="130" :line-size="12" line-fg-color="#656565" class="mt-32" />
     </div>
     <div v-else>
       <div v-if="clients.length === 0">
@@ -64,7 +64,7 @@
 
 <script>
 import ClickOutside from 'vue-click-outside'
-import { VueLoading } from 'vue-loading-template'
+import Spinner from 'vue-simple-spinner'
 import FlashMessage from '../../components/FlashMessage.vue'
 import NotRegistered from '../../components/NotRegistered.vue'
 import DropDown from '../../components/DropDown.vue'
@@ -74,7 +74,7 @@ import { infoMessage, errorMessage } from '../../constants/message'
 
 export default {
   components: {
-    VueLoading,
+    Spinner,
     FlashMessage,
     NotRegistered,
     DropDown,

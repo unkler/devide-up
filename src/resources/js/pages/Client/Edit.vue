@@ -4,7 +4,7 @@
       <h2 class="font-medium text-gray-800 mr-5 dark:text-gray-400">取引先編集</h2>
     </div>
     <div v-if="isLoading.client || isLoading.prefectures">
-      <vue-loading type="spin" color="#656565" :size="{ width: '150px', height: '150px' }"></vue-loading>
+      <Spinner v-if="isLoading" size="130" :line-size="12" line-fg-color="#656565" class="mt-32" />
     </div>
     <div v-else>
       <div class="mx-4 my-5">
@@ -97,7 +97,7 @@ import { extend, ValidationProvider, ValidationObserver, localize } from 'vee-va
 import { required, email, max } from 'vee-validate/dist/rules'
 import jaVeeValidate from 'vee-validate/dist/locale/ja'
 import jsonpAdapter from 'axios-jsonp'
-import { VueLoading } from 'vue-loading-template'
+import Spinner from 'vue-simple-spinner'
 import { replaceToHalfWidth } from '../../common'
 import { errorMessage } from '../../constants/message'
 
@@ -111,7 +111,7 @@ export default {
   components: {
     ValidationProvider,
     ValidationObserver,
-    VueLoading,
+    Spinner,
   },
   props: {
     id: {
