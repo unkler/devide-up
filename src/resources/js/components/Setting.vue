@@ -1,6 +1,9 @@
 <template>
-  <div :class="{'open-setting': isSettingOpen }"
-    class="bg-white dark:bg-gray-800 absolute z-10 top-16 right-0 overflow-x-hidden w-0 h-full transition-all duration-200">
+  <div
+    v-click-outside="closeSetting" 
+    :class="{'open-setting': isSettingOpen }"
+    class="bg-white dark:bg-gray-800 absolute z-10 top-16 right-0 overflow-x-hidden w-0 h-full transition-all duration-200"
+  >
     <div class="flex justify-between mt-10 mx-4"> 
       <h2 class="font-medium text-gray-800 dark:text-gray-400">設定変更</h2>
       <button @click="toggleSetting" class="text-gray-600 hover:text-gray-500 dark:text-gray-400 text-3xl" title="閉じる">
@@ -42,6 +45,7 @@
 import { extend, ValidationProvider, ValidationObserver, localize } from 'vee-validate'
 import { required, email, max } from 'vee-validate/dist/rules'
 import jaVeeValidate from 'vee-validate/dist/locale/ja'
+import ClickOutside from 'vue-click-outside'
 import { infoMessage, errorMessage } from '../constants/message'
 
 localize('ja', jaVeeValidate)
@@ -60,11 +64,22 @@ export default {
       user: {},
       serverValidationMessage: {},
       isSettingOpen: false,
+      isDropdownClosingAllowed: true,
     }
   },
   methods: {
     toggleSetting() {
+      this.isDropdownClosingAllowed = false
       this.isSettingOpen = !this.isSettingOpen
+
+      setTimeout(() => {
+        this.isDropdownClosingAllowed = true;
+      }, 200)
+    },
+    closeSetting() {
+      if (this.isSettingOpen && this.isDropdownClosingAllowed) {
+        this.isSettingOpen = false;
+      }
     },
     isAuthenticated() {
       axios.get('/api/authenticated')
@@ -106,7 +121,10 @@ export default {
    },
    created() {
     this.isAuthenticated()
-   }
+   },
+   directives: {
+    ClickOutside
+  }
 }
 </script>
 
