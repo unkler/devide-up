@@ -44,6 +44,12 @@
                     </a>
                 @endif
             </div>
+            <div class="block mt-4 text-center">
+              <a class="underline text-sm text-center text-gray-600 hover:text-gray-900" href="{{ url('/') }}">
+                {{ __('Back to Top') }}
+              </a>
+            </div>
         </form>
+        
     </x-auth-card>
 </x-guest-layout>
