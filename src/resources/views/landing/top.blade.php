@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 @component('components.landing.header')
-Devide Up | 現場作業向け スケジュール管理ツール
+完全無料の現場作業向けメール・スケジュール・タスク管理ツール | Devide Up
 @endcomponent
 
 <body class="text-gray-800 antialiased">
