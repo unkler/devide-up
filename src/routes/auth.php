@@ -63,7 +63,7 @@ Route::prefix('login')->name('login.')->group(function () {
 
 //O-Auth(Google)登録
 Route::prefix('register')->name('register.')->group(function () {
-    Route::get('/{provider}', [RegisteredUserController::class, 'showProviderUserRegistrationForm'])->name('{provider}');
-    Route::post('/{provider}', [RegisteredUserController::class, 'registerProviderUser'])->name('{provider}');
+    Route::get('/{provider}', [RegisteredUserController::class, 'showProviderUserRegistrationForm'])->name('{provider}.show');
+    Route::post('/{provider}', [RegisteredUserController::class, 'registerProviderUser'])->name('{provider}.register');
 });
 

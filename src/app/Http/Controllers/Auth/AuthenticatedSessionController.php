@@ -91,7 +91,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->intended(RouteServiceProvider::HOME);
         }
 
-        return redirect()->route('register.{provider}', [
+        return redirect()->route('register.{provider}.show', [
             'provider' => $provider,
             'email' => $providerUser->getEmail(),
             'token' => $providerUser->token,

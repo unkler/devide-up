@@ -4,7 +4,7 @@
       <!-- Validation Errors -->
       <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-      <form method="POST" action="{{ route('register.{provider}', ['provider' => $provider]) }}">
+      <form method="POST" action="{{ route('register.{provider}.register', ['provider' => $provider]) }}">
           @csrf
 
           <input type="hidden" name="token" value="{{ $token }}">
