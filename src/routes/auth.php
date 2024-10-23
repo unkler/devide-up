@@ -54,3 +54,16 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+
+//O-Auth(Google)ログイン
+Route::prefix('login')->name('login.')->group(function () {
+    Route::get('/{provider}', [AuthenticatedSessionController::class, 'redirectToProvider'])->name('{provider}');
+    Route::get('/{provider}/callback', [AuthenticatedSessionController::class, 'handleProviderCallback'])->name('{provider}.callback');
+});
+
+//O-Auth(Google)登録
+Route::prefix('register')->name('register.')->group(function () {
+    Route::get('/{provider}', [RegisteredUserController::class, 'showProviderUserRegistrationForm'])->name('{provider}');
+    Route::post('/{provider}', [RegisteredUserController::class, 'registerProviderUser'])->name('{provider}');
+});
+

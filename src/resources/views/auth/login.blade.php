@@ -7,6 +7,12 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
+        <div class="text-white bg-red-600 rounded-md shadow-lg shadow-neutral-500/20 transition flex justify-center p-2 mb-4">
+          <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="flex items-center">
+            <i class="fab fa-google text-xl mr-2"></i>{{ __('Log in with Google') }}
+          </a>
+        </div>
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <!-- Email Address -->

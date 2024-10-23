@@ -1,0 +1,41 @@
+<x-guest-layout>
+  @section('title', __('Free Registration') . ' | ' . config('app.name', 'Devide Up'))
+  <x-auth-card>
+      <!-- Validation Errors -->
+      <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+      <form method="POST" action="{{ route('register.{provider}', ['provider' => $provider]) }}">
+          @csrf
+
+          <input type="hidden" name="token" value="{{ $token }}">
+
+          <!-- Name -->
+          <div>
+              <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" placeholder="{{ __('Name') }}" required autofocus />
+          </div>
+
+          <!-- Email Address -->
+          <div class="mt-4">
+              <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$email" placeholder="{{ __('Email') }}" required disabled />
+              
+          </div>
+
+          <div class="mt-4">
+              <x-button>
+                  {{ __('Register') }}
+              </x-button>
+          </div>
+
+          <div class="mt-4">
+              <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                  {{ __('Already registered?') }}
+              </a>
+          </div>
+          <div class="block mt-4 text-center">
+            <a class="underline text-sm text-center text-gray-600 hover:text-gray-900" href="{{ url('/') }}">
+              {{ __('Back to Top') }}
+            </a>
+          </div>
+      </form>
+  </x-auth-card>
+</x-guest-layout>
