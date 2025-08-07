@@ -10,7 +10,7 @@
   <main>
     <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
       <div class="absolute top-0 w-full h-full bg-center bg-cover"
-        style="background-image: url('https://devide-up.s3.ap-northeast-1.amazonaws.com/images/hero.jpg');">
+        style="background-image: url('https://devide-up2025.s3.ap-northeast-1.amazonaws.com/images/hero.jpg');">
         <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
       </div>
       <div class="container relative mx-auto">
@@ -41,7 +41,7 @@
           <div class="flex flex-col sm:flex-row mt-10">
             <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
               <div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-500 text-gray-400">
-                <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/unkler_logo.png"
+                <img src="https://devide-up2025.s3.ap-northeast-1.amazonaws.com/images/unkler_logo.png"
                   class="rounded-full" alt="unkler">
               </div>
               <div class="flex flex-col items-center text-center justify-center">

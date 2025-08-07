@@ -43,7 +43,7 @@
                 <div v-for="employee in employees" :key="employee.id"  class="table-row border-current divide-y bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-400">
                   <div class="table-cell px-4 py-3 text-3xl align-middle border-t">
                     <template v-if="employee.employee_images.length > 0">
-                      <img class="w-14 h-14 rounded-full" :src="'https://devide-up.s3.ap-northeast-1.amazonaws.com/' + employee.employee_images[0].path" />
+                      <img class="w-14 h-14 rounded-full" :src="'https://devide-up2025.s3.ap-northeast-1.amazonaws.com/' + employee.employee_images[0].path" />
                     </template>
                     <template v-else>
                       <span class="text-5xl text-gray-500">

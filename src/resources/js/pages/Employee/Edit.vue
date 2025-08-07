@@ -150,7 +150,7 @@
                     <i class="fa-solid fa-xmark leading-7"></i>
                   </div>
                   <div class="text-center w-72 h-[216px] flex justify-center">
-                    <img :src="'https://devide-up.s3.ap-northeast-1.amazonaws.com/' + employee.employee_images[0].path" class="w-auto h-auto max-w-full max-h-full rounded-md"/>
+                    <img :src="'https://devide-up2025.s3.ap-northeast-1.amazonaws.com/' + employee.employee_images[0].path" class="w-auto h-auto max-w-full max-h-full rounded-md"/>
                   </div>
                 </div>
                 <div v-show="profileImagePreview" class="relative w-72 h-[216px] bg-gray-800 rounded-lg">

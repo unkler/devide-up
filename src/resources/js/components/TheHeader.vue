@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex items-center justify-between h-14 text-white bg-blue-800 dark:bg-gray-800">
     <a href="https://devide-up.com" class="flex items-center justify-start h-14 ml-5">
-        <img class="w-6 h-6 md:w-10 md:h-10 mr-2 rounded-md overflow-hidden" src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/logo.jpg" />
+        <img class="w-6 h-6 md:w-10 md:h-10 mr-2 rounded-md overflow-hidden" src="https://devide-up2025.s3.ap-northeast-1.amazonaws.com/images/logo.jpg" />
         <span class="hidden md:block">Devide Up</span>
     </a>
     <div class="flex justify-between items-center h-14 bg-blue-800 dark:bg-gray-800 header-right">

@@ -10,7 +10,7 @@
   <main>
     <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
       <div class="absolute top-0 w-full h-full bg-center bg-cover"
-        style="background-image: url('https://devide-up.s3.ap-northeast-1.amazonaws.com/images/hero.jpg');">
+        style="background-image: url('https://devide-up2025.s3.ap-northeast-1.amazonaws.com/images/hero.jpg');">
         <span id="blackOverlay" class="w-full h-full absolute opacity-75 bg-black"></span>
       </div>
       <div class="container relative mx-auto">
@@ -43,7 +43,7 @@
             <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg scroll-reveal">
               <div class="px-4 py-5 flex-auto">
                 <div class="flex justify-center">
-                  <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/thinking_man.png" width="100"
+                  <img src="https://devide-up2025.s3.ap-northeast-1.amazonaws.com/images/thinking_man.png" width="100"
                     class="m-auto" alt="エクセルでの管理から脱却">
                 </div>
                 <h3 class="text-xl font-semibold mt-4">エクセルでの管理から脱却</h3>
@@ -57,7 +57,7 @@
             <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg scroll-reveal">
               <div class="px-4 py-5 flex-auto">
                 <div class="flex justify-center">
-                  <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/browser.png" width="100"
+                  <img src="https://devide-up2025.s3.ap-northeast-1.amazonaws.com/images/browser.png" width="100"
                     class="m-auto" alt="かんたん登録">
                 </div>
                 <h3 class="text-xl font-semibold mt-4">かんたん登録</h3>
@@ -71,7 +71,7 @@
             <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg scroll-reveal">
               <div class="px-4 py-5 flex-auto">
                 <div class="flex justify-center">
-                  <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/worker.png" class="text-center"
+                  <img src="https://devide-up2025.s3.ap-northeast-1.amazonaws.com/images/worker.png" class="text-center"
                     width="100" class="m-auto" alt="現場作業の割り当てに特化">
                 </div>
                 <h3 class="text-xl font-semibold mt-4">現場作業の割り当てに特化</h3>
@@ -85,7 +85,7 @@
         <div class="flex flex-wrap items-center mt-32 scroll-reveal">
           <div class="w-full px-4 mr-auto ml-auto">
             <div class="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-blue-800">
-              <img src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/landing_expain01.png"
+              <img src="https://devide-up2025.s3.ap-northeast-1.amazonaws.com/images/landing_expain01.png"
                 class="w-full align-middle rounded-t-lg" alt="操作画面イメージ" />
               <blockquote class="relative p-8 mb-4">
                 <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"

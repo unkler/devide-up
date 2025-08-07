@@ -31,11 +31,11 @@
               <div v-for="workplace in workplaces" :key="workplace.id" class="relative w-[340px] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                   <template v-if="workplace.workplace_images.length > 0">
                     <div class="bg-gray-800 rounded-t-lg flex justify-center">
-                      <img class="rounded-t-lg h-[230px]" :src="'https://devide-up.s3.ap-northeast-1.amazonaws.com/' + workplace.workplace_images[0].path" />
+                      <img class="rounded-t-lg h-[230px]" :src="'https://devide-up2025.s3.ap-northeast-1.amazonaws.com/' + workplace.workplace_images[0].path" />
                     </div>
                   </template>
                   <template v-else>
-                    <img class="rounded-t-lg" src="https://devide-up.s3.ap-northeast-1.amazonaws.com/images/no_image.jpg" />
+                    <img class="rounded-t-lg" src="https://devide-up2025.s3.ap-northeast-1.amazonaws.com/images/no_image.jpg" />
                   </template>
                   <div @click.stop="openDropDown(workplace.id)" v-click-outside="closeDropDown" class="absolute top-[234px] right-1 w-10 h-10 leading-10 text-center dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full text-lg cursor-pointer">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
