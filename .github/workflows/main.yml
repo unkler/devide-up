@@ -102,11 +102,11 @@ jobs:
         run: |
           docker build -t php:prod -f docker/php/Dockerfile .
           docker build -t nginx:prod -f docker/nginx/Dockerfile .
-          docker tag php:prod 851725229525.dkr.ecr.ap-northeast-1.amazonaws.com/php:prod
-          docker tag nginx:prod 851725229525.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:prod
-          aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 851725229525.dkr.ecr.ap-northeast-1.amazonaws.com
-          docker push 851725229525.dkr.ecr.ap-northeast-1.amazonaws.com/php:prod
-          docker push 851725229525.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:prod
+          docker tag php:prod 302541338030.dkr.ecr.ap-northeast-1.amazonaws.com/php:prod
+          docker tag nginx:prod 302541338030.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:prod
+          aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 302541338030.dkr.ecr.ap-northeast-1.amazonaws.com
+          docker push 302541338030.dkr.ecr.ap-northeast-1.amazonaws.com/php:prod
+          docker push 302541338030.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:prod
 
         # run: |
         #   docker build -t task-devide-app ./infra/php
