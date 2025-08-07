@@ -39,7 +39,7 @@ jobs:
 
       # GithubActions内のpackage-lock.jsonのキャッシュをクリア
       - name: Setup cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             node_modules
